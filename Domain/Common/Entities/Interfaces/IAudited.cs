@@ -15,4 +15,28 @@ namespace Domain.Common.Entities.Interfaces
         public DateTime CreateTime { get; set; }
     }
 
+    public interface ICreationAudited:IHasCreationTime
+    {
+        public long? CreatedUserID { get; set; }
+    }
+    
+    public interface IHasModificationTime:IAudited
+    {
+        public DateTime? LastModifiedTime { get; set; }
+    }
+
+    public interface IModificationAudited:IHasModificationTime
+    {
+        public long? LastModifiedUserID { get; set; }
+    }
+
+    public interface IHasDeletionTime : IAudited
+    {
+        public DateTime? DeletedDate { get; set; }
+    }
+
+    public interface IDeletionAudited : IHasDeletionTime
+    {
+        public long? DeletedUserID { get; set; }
+    }
 }
