@@ -1,4 +1,5 @@
 ﻿using Domain.Common.Entities;
+using Domain.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace Domain.Entities
         public short Age { get; set; }
 
         public ICollection<ToDoTask>? Tasks { get; set; }
+
+        public Address Address { get; set; }
     }
 }
