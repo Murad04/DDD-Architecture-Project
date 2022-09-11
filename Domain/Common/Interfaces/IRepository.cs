@@ -6,14 +6,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Common.Repository.Interfaces
+namespace Domain.Common.Interfaces
 {
-    public interface IRepository<TEntity, in TPrimaryKey> :IDisposable where TEntity : BaseEntity<TPrimaryKey>   
+    public interface IRepository<TEntity, in TPrimaryKey> : IDisposable where TEntity : BaseEntity<TPrimaryKey>
     {
         IQueryable<TEntity> GetAll();
-        
+
         IQueryable<TEntity> GetAllIncluding(params Expression<Func<TEntity, object>>[] includeProperties);
-        
+
         Task<List<TEntity>> GetAllList();
 
         Task<List<TEntity>> GetAllListIncluding(params Expression<Func<TEntity, object>>[] includeProperties);
@@ -26,7 +26,7 @@ namespace Domain.Common.Repository.Interfaces
 
         Task<TEntity> GetFirst(TPrimaryKey id);
 
-        Task<TEntity> GetFirstIncluding(TPrimaryKey id,params Expression<Func<TEntity, object>>[] includeProperties);
+        Task<TEntity> GetFirstIncluding(TPrimaryKey id, params Expression<Func<TEntity, object>>[] includeProperties);
 
         Task<TEntity> GetFirst(Expression<Func<TEntity, bool>> predicate);
 
@@ -49,7 +49,7 @@ namespace Domain.Common.Repository.Interfaces
         IQueryable<TEntity> FindByIncluding(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] inclueProperties);
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         Task<bool> Any(Expression<Func<TEntity, bool>> predicate);
 
         Task<bool> All(Expression<Func<TEntity, bool>> predicate);
@@ -68,7 +68,7 @@ namespace Domain.Common.Repository.Interfaces
 
         Task Delete(TEntity entity);
 
-        Task DeleteWhere(Expression<Func<TEntity, bool>> predicate);    
+        Task DeleteWhere(Expression<Func<TEntity, bool>> predicate);
 
         Task Commit(CancellationToken cancellationToken);
 
