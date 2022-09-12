@@ -15,6 +15,7 @@ namespace Domain.Entities
         /// ICreationAudited
         public long? CreatedUserID { get; set; }
 
+
         public DateTime CreateTime { get; set; }
 
         /// IModificationAudited
