@@ -8,18 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Tasks.Commands.CreateTask
+namespace Application.Tasks.Commands.UpdateTask
 {
-    public class CreateTaskCommand:IRequest<int>,IMapTo<ToDoTask>
+    public class UpdateTaskCommand:IRequest,IMapTo<ToDoTask>
     {
+        public int ID { get; set; }
         public string? Name { get; set; }
-
-        public bool IsCompleted { get; set; }
-
         public TaskPriority Priority { get; set; }
-
-        public TaskState State { get; set; }
-
-        public int? AssignedPersonID { get; set; }
     }
 }
