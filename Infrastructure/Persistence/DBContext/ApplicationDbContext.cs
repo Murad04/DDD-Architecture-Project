@@ -22,8 +22,8 @@ namespace Infrastructure.Persistence.DBContext
             _mediator = mediator;
         }
 
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<ToDoTask> Tasks { get; set; }
+        public DbSet<Person> Persons { get; set; } = null!;
+        public DbSet<ToDoTask> Tasks { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
