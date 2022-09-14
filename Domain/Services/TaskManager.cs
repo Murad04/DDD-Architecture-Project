@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class TaskMeneger : ITaskManager
+    public class TaskManager : ITaskManager
     {
         public const int MaxActiveTaskCountForAPerson = 3;
 
         private readonly IRepository<ToDoTask, int> _taskRepository;
 
-        public TaskMeneger(IRepository<ToDoTask, int> taskRepository)
+        public TaskManager(IRepository<ToDoTask, int> taskRepository)
         {
             _taskRepository = taskRepository;
         }
