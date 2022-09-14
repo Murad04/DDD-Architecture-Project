@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Configurations
 {
-    public class PersonConiguration : IEntityTypeConfiguration<Person>
+    public class PersonConifguration : IEntityTypeConfiguration<Person>
     {
         public void Configure(EntityTypeBuilder<Person> builder)
         {
@@ -24,8 +24,7 @@ namespace Infrastructure.Persistence.Configurations
                 .HasMaxLength(20)
                 .IsRequired();
 
-            builder.Property(person => person.Address)
-                .IsRequired();
+            builder.OwnsOne(o => o.Address);
         }
     }
 }

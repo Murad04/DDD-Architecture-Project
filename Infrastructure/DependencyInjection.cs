@@ -1,4 +1,8 @@
-﻿using Infrastructure.Persistence.DBContext;
+﻿using Application.Common.Interfaces;
+using Domain.Common.Interfaces;
+using Infrastructure.Persistence.DBContext;
+using Infrastructure.Persistence.Repository;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +24,10 @@ namespace Infrastructure
                     configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
             });
+
+            services.AddScoped(typeof(IRepository<,>), typeof(EfRepository<,>));
+
+            services.AddTransient<IDateTimeService, DateTimeService>();
 
             return services;
         }

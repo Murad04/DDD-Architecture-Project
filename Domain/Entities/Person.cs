@@ -18,6 +18,6 @@ namespace Domain.Entities
 
         public ICollection<ToDoTask>? Tasks { get; set; }
 
-        public Address Address { get; set; }
+        public Address? Address { get; set; }
     }
 }

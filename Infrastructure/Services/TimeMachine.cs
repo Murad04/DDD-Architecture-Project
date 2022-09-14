@@ -120,3 +120,4 @@ namespace Infrastructure.Services
             return FrozenDateTime != null || !Offset.Equals(TimeSpan.Zero);
         }
     }
+}
