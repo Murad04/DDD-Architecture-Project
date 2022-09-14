@@ -1,5 +1,5 @@
-﻿using Application.Tasks.Queries.GetTasksQuery;
-using Application.Tasks.Queries.ViewModel;
+﻿using Application.Tasks.Queries.GetTasks;
+using Application.Tasks.Queries.GetTasks.ViewModel;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Domain.Common.Interfaces;

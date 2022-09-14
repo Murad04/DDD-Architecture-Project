@@ -35,15 +35,15 @@ namespace Domain.Entities
 
         public bool IsCompleted { get; set; }
 
-        public TaskPriority Priority { get; set; } 
+        public TaskPriority? Priority { get; set; } 
         
-        public TaskState State { get; set; }  
+        public TaskState? State { get; set; }  
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///Navigation Properties
         
         public int AssignedPersonId { get; set; }
 
-        public Person Person { get; set; }
+        public Person? Person { get; set; }
     }
 }

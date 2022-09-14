@@ -13,6 +13,8 @@ namespace Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ToDoTask> builder)
         {
+            builder.HasOne(t => t.Person).WithMany(p => p.Tasks).HasForeignKey(t => t.AssignedPersonId);
+
             builder.Property(task => task.Name)
                 .HasMaxLength(30)
                 .IsRequired();

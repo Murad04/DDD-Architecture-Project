@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Tasks.Queries.GetTasksQuery
+namespace Application.Tasks.Queries.GetTasks
 {
     public class TaskDTO:IMapFrom<ToDoTask>
     {

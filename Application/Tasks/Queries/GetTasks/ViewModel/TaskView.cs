@@ -1,12 +1,12 @@
 ﻿using Application.Tasks.Queries.Enums;
-using Application.Tasks.Queries.GetTasksQuery;
+using Application.Tasks.Queries.GetTasks;
 using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Application.Tasks.Queries.ViewModel
+namespace Application.Tasks.Queries.GetTasks.ViewModel
 {
     public class TaskView
     {

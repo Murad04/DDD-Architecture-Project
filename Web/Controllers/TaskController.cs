@@ -2,19 +2,13 @@
 using Application.Tasks.Commands.DeleteTask;
 using Application.Tasks.Commands.UpdateTask;
 using Application.Tasks.Queries.GetTasks;
-using Application.Tasks.Queries.ViewModel;
+using Application.Tasks.Queries.GetTasks.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
     public class TaskController:ApiController
     {
-        [HttpGet]
-        public async Task<ActionResult<TaskView>> Get()
-        {
-            return await Mediator.Send(new GetTasksQuery());
-        }
-
         [HttpGet("{taskName}")]
         public async Task<ActionResult<TaskView>> GetByName(string taskName)
         {

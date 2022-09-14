@@ -1,11 +1,8 @@
-﻿using Domain.Common.Interfaces;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Domain.Common.Interfaces;
 using Domain.Entities;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Tasks.Commands.CreateTask.Validator
 {

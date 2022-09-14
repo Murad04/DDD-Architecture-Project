@@ -1,4 +1,4 @@
-﻿using Application.Tasks.Queries.ViewModel;
+﻿using Application.Tasks.Queries.GetTasks.ViewModel;
 using MediatR;
 using System;
 using System.Collections.Generic;

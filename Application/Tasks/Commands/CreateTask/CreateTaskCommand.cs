@@ -1,4 +1,5 @@
 ﻿using Application.Common.Mappings;
+using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
@@ -21,5 +22,9 @@ namespace Application.Tasks.Commands.CreateTask
         public TaskState State { get; set; }
 
         public int? AssignedPersonID { get; set; }
+
+        public void Mapping(Profile profile) =>
+            profile.CreateMap<CreateTaskCommand, ToDoTask>()
+            .ForMember(d => d.AssignedPersonId, o => o.Ignore());
     }
 }
