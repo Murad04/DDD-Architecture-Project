@@ -16,8 +16,6 @@ namespace Application.Tasks.Queries.GetTasks.ViewModel
             .Select(p => new EnumValueDTO { Value = (int)p, Name = p.ToString() })
             .ToList();
 
-
-
         public IList<EnumValueDTO> TaskStates { get; } =
             Enum.GetValues(typeof(TaskState))
             .Cast<TaskState>()
