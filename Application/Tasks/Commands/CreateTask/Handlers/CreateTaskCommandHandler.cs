@@ -14,7 +14,7 @@ namespace Application.Tasks.Commands.Handlers
 {
     public class CreateTaskCommandHandler : IRequestHandler<CreateTaskCommand, int>
     {
-        public readonly IRepository<ToDoTask, int> _taskRepository;
+        private readonly IRepository<ToDoTask, int> _taskRepository;
         private readonly IRepository<Person, int> _personRepository;
         private readonly ITaskManager _taskManager;
         private readonly IMapper _mapper;
